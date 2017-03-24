@@ -1,0 +1,91 @@
+<!--
+Name: Adhrika Udaylal Pai
+Student no: 991451940
+Assignment 4 - SHOPPING LIST
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<title>SHOPPING</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="Assignment4_Adhrika.css">
+	<link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
+	<head>
+	</head>
+	<body>
+
+		<header>
+			<h1 align = "center">SHOPPING LIST</h1>
+		</header>
+
+		<form name="myForm" method="post" align = "center">
+		   PRODUCT :
+			<input type="text" name="product" id="product">
+		   QUANTITY :
+		    <input type="text" name="quantity" id="quantity">
+
+		   <button type="button" onclick="return validateForm()">ADD</button>
+		</form>
+
+		<br>
+		<br>
+
+		<table id="tab" align = "center">
+		  <tr>
+			<th>Product</th>
+		    <th>Quantity</th>
+		    <th>Remove</th>
+		  </tr>
+
+		<script type="text/javascript">
+
+		   //CHECKS IF THE LIST HASN'T BEEN FILLED UP
+		   function validateForm()
+		   {
+					var prod = document.forms["myForm"]["product"].value;
+					if (prod == null || prod == "") {
+						alert("PLEASE ADD A PRODUCT");
+						return false;
+					}
+					var qty = document.forms["myForm"]["quantity"].value;
+					if (qty == null || qty == "") {
+						alert("PLEASE ADD THE QUANTITY REQUIRED");
+						return false;
+					}
+				add(event);
+		 }
+
+		 //TO INSERT THE LIST IN A TABLE
+		  function add(event)
+		  {
+					var table = document.getElementById("tab");
+
+				  var row = table.insertRow(1);
+					var col1 = row.insertCell(0);
+					var col2 = row.insertCell(1);
+					var col3 = row.insertCell(2);
+
+					var prod = document.getElementById("product").value;
+					var qty = document.getElementById("quantity").value;
+					var btn = "<INPUT TYPE=\"Button\" CLASS=\"Button\" onClick=\"deleteRow(this)\" VALUE=\"Delete\">";
+
+					col1.innerHTML = prod;
+				  col2.innerHTML = qty;
+					col3.innerHTML =btn;
+
+					document.forms["myForm"]["product"].value='';
+					document.forms["myForm"]["quantity"].value='';
+
+			}
+
+			//TO DELETE EACH LIST AS PER REQUIRED
+			function deleteRow(r)
+			{
+				var i = r.parentNode.parentNode.rowIndex;
+				document.getElementById("tab").deleteRow(i);
+			}
+
+		</script>
+	</body>
+</html>

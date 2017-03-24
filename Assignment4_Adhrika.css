@@ -1,0 +1,42 @@
+/*
+Name: Adhrika Udaylal Pai
+Student no: 991451940
+Assignment 4 - SHOPPING LIST
+
+*/
+
+html{
+  font-family: 'Caveat Brush', cursive;
+  color: black;
+}
+body{
+  background-image: url("note.jpg");
+  margin: 10%;
+}
+table
+{
+  border-collapse: collapse;
+  width: 40%;
+}
+th, td
+{
+  text-align: left;
+  padding: 8px;
+  font-size: 25px;
+  font-family: 'Caveat Brush', cursive;
+}
+th
+{
+  background-color: #40E0D0	;
+}
+button{
+    background-color: #008080	;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 16px;
+}
